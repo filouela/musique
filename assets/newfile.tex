@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{svg}
+\usepackage{minted}
+
+\svgsetup{
+  inkscapeexe= /Applications/Inkscape.app/Contents/MacOS/inkscape
+}
+
+\newcounter{Qscore}
+\newenvironment{score}{%
+	\noindent
+	\VerbatimEnvironment\stepcounter{Qscore}%
+	\begin{VerbatimOut}{scores/s\theQscore.abc}%
+	}{\end{VerbatimOut}%
+	\input{|"python3.11 abcd.py \theQscore"}%
+}
+
+\begin{document}
+
+BONFANTE Hélène, CHITAOUY Rayane, MALKI Anas
+
+\begin{score}
+
+X: 1
+T: TIPE
+M: C
+L : 1
+K:0 clef=G
+|C1D1E1F1|G1A1B1C'1|C'4||
+
+\end{score}
+\end{document}
